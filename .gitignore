@@ -1,0 +1,8 @@
+# 1C artifacts / build output
+/build/
+/TASKS/
+
+# editor / OS
+.vscode/
+Thumbs.db
+desktop.ini

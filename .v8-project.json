@@ -1,0 +1,32 @@
+{
+  "v8path": "C:\\Program Files\\1cv8\\8.3.27.2214\\bin",
+  "databases": [
+    {
+      "name": "ConfigName",
+      "type": "file",
+      "path": "C:\\Bases\\MyApp_ConfigName",
+      "user": "Администратор",
+      "password": "",
+      "configSrc": "src\\cf",
+      "webUrl": "http://localhost:8081/ConfigName",
+      "extensions": [
+        {
+          "name": "",
+          "src": "src\\cfe\\NAME"
+        }
+      ]
+    }
+  ],
+  "default": "Разработка",
+  "webPath": "C:\\tools\\apache24",
+  "ffmpegPath": "C:\\tools\\ffmpeg\\bin\\ffmpeg.exe",
+  "tts": {
+    "provider": "edge",
+    "voice": "ru-RU-DmitryNeural"
+  },
+  "MD_PREFIX": "SD",
+  "COMMENT_OPEN": "//++ SD-{TASK}",
+  "COMMENT_CLOSE": "//-- SD-{TASK}",
+  "NEW_OBJECTS_IN": "cf",
+  "NEW_BD_OBJECTS_IN": "cfe"
+}
