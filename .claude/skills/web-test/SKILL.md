@@ -17,7 +17,7 @@ Automates user interactions with 1C:Enterprise web client via Playwright — nav
 ## Quick start
 
 ```bash
-RUN=".cursor/skills/web-test/scripts/run.mjs"
+RUN="${CLAUDE_SKILL_DIR}/scripts/run.mjs"
 
 # One-shot: opens browser → runs script → closes browser → exits
 node $RUN run http://localhost:8081/bpdemo test-scenario.js
@@ -35,10 +35,10 @@ SCRIPT
 ## Setup (first time)
 
 ```bash
-cd ".cursor/skills/web-test/scripts" && npm install
+cd "${CLAUDE_SKILL_DIR}/scripts" && npm install && npx playwright install chromium
 ```
 
-Requires Node.js 18+. `npm install` downloads Playwright and Chromium.
+Requires Node.js 18+. `npm install` fetches Playwright; `npx playwright install chromium` downloads the browser.
 
 ## URL resolution
 

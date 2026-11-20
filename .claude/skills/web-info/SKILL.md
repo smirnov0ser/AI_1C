@@ -26,7 +26,7 @@ allowed-tools:
 ## Команда
 
 ```powershell
-powershell.exe -NoProfile -File ".cursor/skills/web-info/scripts/web-info.ps1" <параметры>
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/web-info.ps1" <параметры>
 ```
 
 ### Параметры скрипта
@@ -62,8 +62,8 @@ Apache, но не публикаций. Убедиться в конкретно
 
 ```powershell
 # Статус по умолчанию
-powershell.exe -NoProfile -File ".cursor/skills/web-info/scripts/web-info.ps1"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/web-info.ps1"
 
 # Указать путь к Apache
-powershell.exe -NoProfile -File ".cursor/skills/web-info/scripts/web-info.ps1" -ApachePath "C:\tools\apache24"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/web-info.ps1" -ApachePath "C:\tools\apache24"
 ```

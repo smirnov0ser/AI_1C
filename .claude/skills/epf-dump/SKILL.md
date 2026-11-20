@@ -26,20 +26,20 @@ allowed-tools:
 
 Для разборки EPF/ERF требуется информационная база с конфигурацией. Без базы ссылочные типы безвозвратно теряются.
 
-1. Прочитай `.v8-project.json` из корня проекта. Возьми `v8path` и разреши базу:
+1. Прочитай `.v8-project.json` из корня проекта и разреши базу:
 2. Если пользователь указал параметры подключения (путь, сервер) — используй напрямую
 3. Если указал базу по имени — ищи по id / alias / name в `.v8-project.json`
 4. Если не указал — сопоставь текущую ветку Git с `databases[].branches`
 5. Если ветка не совпала — используй `default`
 6. Если `.v8-project.json` нет или база не найдена — **сообщи пользователю об ошибке**. Для dump база обязательна: в пустой базе ссылочные типы (CatalogRef, DocumentRef и т.д.) безвозвратно сбрасываются в строки. Предложи указать базу или зарегистрировать через `/db-list add`.
 
-Если `v8path` не задан — скрипт сам попытается определить платформу (`.v8-project.json` → Program Files).
+Платформа — `v8path` найденной записи базы, иначе корневой `v8path`. Не задан ни там, ни там — `-V8Path` не передавай.
 Если использованная база не зарегистрирована — после выполнения предложи добавить через `/db-list add`.
 
 ## Команда
 
 ```powershell
-powershell.exe -NoProfile -File ".cursor/skills/epf-dump/scripts/epf-dump.ps1" <параметры>
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/epf-dump.ps1" <параметры>
 ```
 
 ### Параметры скрипта
@@ -64,8 +64,8 @@ powershell.exe -NoProfile -File ".cursor/skills/epf-dump/scripts/epf-dump.ps1" <
 
 ```powershell
 # Разборка обработки (файловая база)
-powershell.exe -NoProfile -File ".cursor/skills/epf-dump/scripts/epf-dump.ps1" -InfoBasePath "C:\Bases\MyDB" -InputFile "build/МояОбработка.epf" -OutputDir "src"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/epf-dump.ps1" -InfoBasePath "C:\Bases\MyDB" -InputFile "build/МояОбработка.epf" -OutputDir "src"
 
 # Серверная база
-powershell.exe -NoProfile -File ".cursor/skills/epf-dump/scripts/epf-dump.ps1" -InfoBaseServer "srv01" -InfoBaseRef "MyDB" -UserName "Admin" -Password "secret" -InputFile "build/МояОбработка.epf" -OutputDir "src"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/epf-dump.ps1" -InfoBaseServer "srv01" -InfoBaseRef "MyDB" -UserName "Admin" -Password "secret" -InputFile "build/МояОбработка.epf" -OutputDir "src"
 ```

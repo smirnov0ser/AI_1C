@@ -1,6 +1,6 @@
 ---
 name: form-validate
-description: Валидация управляемой формы 1С. Используй после создания или модификации формы для проверки корректности. При наличии BaseForm автоматически проверяет callType и ID расширений
+description: Валидация управляемой формы 1С. Используй после создания или модификации формы для проверки корректности
 argument-hint: <FormPath> [-Detailed] [-MaxErrors 30]
 allowed-tools:
   - Bash
@@ -23,7 +23,7 @@ allowed-tools:
 ## Команда
 
 ```powershell
-powershell.exe -NoProfile -File ".cursor/skills/form-validate/scripts/form-validate.ps1" -FormPath "Catalogs/Номенклатура/Forms/ФормаЭлемента"
-powershell.exe -NoProfile -File ".cursor/skills/form-validate/scripts/form-validate.ps1" -FormPath "src/МояОбработка/Forms/Форма/Ext/Form.xml"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/form-validate.ps1" -FormPath "Catalogs/Номенклатура/Forms/ФормаЭлемента"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/form-validate.ps1" -FormPath "src/МояОбработка/Forms/Форма/Ext/Form.xml"
 ```
 

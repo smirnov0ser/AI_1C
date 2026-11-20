@@ -28,7 +28,7 @@ allowed-tools:
 ## Команда
 
 ```powershell
-powershell.exe -NoProfile -File ".cursor/skills/epf-validate/scripts/epf-validate.ps1" -ObjectPath "src/МойОтчёт"
-powershell.exe -NoProfile -File ".cursor/skills/epf-validate/scripts/epf-validate.ps1" -ObjectPath "src/МойОтчёт/МойОтчёт.xml"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/../epf-validate/scripts/epf-validate.ps1" -ObjectPath "src/МойОтчёт"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/../epf-validate/scripts/epf-validate.ps1" -ObjectPath "src/МойОтчёт/МойОтчёт.xml"
 ```
 

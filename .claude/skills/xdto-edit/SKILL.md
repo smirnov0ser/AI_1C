@@ -27,7 +27,7 @@ allowed-tools:
 | `NoValidate` | нет | Не запускать `xdto-validate` после правки |
 
 ```powershell
-powershell.exe -NoProfile -File ".cursor/skills/xdto-edit/scripts/xdto-edit.ps1" -PackagePath "<путь>" -Operation <op> -Target "<адрес>" -Value "<значение>"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/xdto-edit.ps1" -PackagePath "<путь>" -Operation <op> -Target "<адрес>" -Value "<значение>"
 ```
 
 ## Операции

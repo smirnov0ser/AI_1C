@@ -18,13 +18,13 @@ allowed-tools:
 ### Inline mode (простые операции)
 
 ```powershell
-powershell.exe -NoProfile -File ".cursor/skills/meta-edit/scripts/meta-edit.ps1" -ObjectPath "<path>" -Operation <op> -Value "<val>"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/meta-edit.ps1" -ObjectPath "<path>" -Operation <op> -Value "<val>"
 ```
 
 ### JSON mode (сложные/комбинированные)
 
 ```powershell
-powershell.exe -NoProfile -File ".cursor/skills/meta-edit/scripts/meta-edit.ps1" -DefinitionFile "<json>" -ObjectPath "<path>"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/meta-edit.ps1" -DefinitionFile "<json>" -ObjectPath "<path>"
 ```
 
 | Параметр | Описание |
@@ -33,7 +33,7 @@ powershell.exe -NoProfile -File ".cursor/skills/meta-edit/scripts/meta-edit.ps1"
 | Operation | Inline-операция (альтернатива DefinitionFile) |
 | Value | Значение для inline-операции |
 | DefinitionFile | JSON-файл с операциями (альтернатива Operation) |
-| NoValidate | Не запускать meta-validate после правки |
+| NoValidate | Не запускать валидацию после правки |
 
 ## Частые операции
 

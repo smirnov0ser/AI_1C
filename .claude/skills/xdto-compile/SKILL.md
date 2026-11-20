@@ -28,7 +28,7 @@ allowed-tools:
 | `Force` | нет | Перезаписать существующий пакет. Без него навык откажется затирать уже собранный пакет |
 
 ```powershell
-powershell.exe -NoProfile -File ".cursor/skills/xdto-compile/scripts/xdto-compile.ps1" -XsdPath "<схема.xsd>" -OutputDir "<каталог-исходников>"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/xdto-compile.ps1" -XsdPath "<схема.xsd>" -OutputDir "<каталог-исходников>"
 ```
 
 Примеры:

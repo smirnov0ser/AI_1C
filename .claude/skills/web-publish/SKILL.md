@@ -31,7 +31,7 @@ allowed-tools:
 4. Если ветка не совпала — используй `default`
 
 **ОБЯЗАТЕЛЬНО передавай все найденные параметры:**
-- **`-V8Path`** — из `v8path` в `.v8-project.json`. Если не передать, скрипт автоопределит версию платформы, что может выбрать не ту версию
+- **`-V8Path`** — `v8path` найденной записи базы, иначе корневой `v8path`. Не задан ни там, ни там — не передавай, но версия платформы тогда выберется автоматически и может оказаться не той
 - **`-UserName`** — из поля `user` найденной записи базы (если есть)
 - **`-Password`** — из поля `password` найденной записи базы (если есть)
 - **`-ApachePath`** — из `webPath` в `.v8-project.json` (если есть)
@@ -41,7 +41,7 @@ allowed-tools:
 ## Команда
 
 ```powershell
-powershell.exe -NoProfile -File ".cursor/skills/web-publish/scripts/web-publish.ps1" <параметры>
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/web-publish.ps1" <параметры>
 ```
 
 ### Параметры скрипта
@@ -92,14 +92,14 @@ powershell.exe -NoProfile -File ".cursor/skills/web-publish/scripts/web-publish.
 
 ```powershell
 # Файловая база
-powershell.exe -NoProfile -File ".cursor/skills/web-publish/scripts/web-publish.ps1" -InfoBasePath "C:\Bases\MyDB" -UserName "Admin"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/web-publish.ps1" -InfoBasePath "C:\Bases\MyDB" -UserName "Admin"
 
 # С явным именем публикации и портом
-powershell.exe -NoProfile -File ".cursor/skills/web-publish/scripts/web-publish.ps1" -InfoBasePath "C:\Bases\MyDB" -AppName "mydb" -Port 9090
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/web-publish.ps1" -InfoBasePath "C:\Bases\MyDB" -AppName "mydb" -Port 9090
 
 # Серверная база
-powershell.exe -NoProfile -File ".cursor/skills/web-publish/scripts/web-publish.ps1" -InfoBaseServer "srv01" -InfoBaseRef "MyDB" -UserName "Admin" -Password "secret"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/web-publish.ps1" -InfoBaseServer "srv01" -InfoBaseRef "MyDB" -UserName "Admin" -Password "secret"
 
 # Ручной режим (только инструкция)
-powershell.exe -NoProfile -File ".cursor/skills/web-publish/scripts/web-publish.ps1" -InfoBasePath "C:\Bases\MyDB" -Manual
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/web-publish.ps1" -InfoBasePath "C:\Bases\MyDB" -Manual
 ```

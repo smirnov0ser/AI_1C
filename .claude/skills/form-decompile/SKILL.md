@@ -21,7 +21,7 @@ allowed-tools:
 
 ## Когда **не** использовать
 
-- **Точечные правки готовой формы** (добавить элемент, реквизит, команду) → `/form-edit`. Цикл «декомпиляция → правка JSON → компиляция» переписывает форму целиком, может терять непокрытые конструкции и даёт большой diff. `/form-edit` правит адресно.
+- **Точечные правки готовой формы** (добавить элемент, реквизит, команду; переставить элемент, перенести в другую группу, поменять заголовок или видимость, удалить) → `/form-edit`. Цикл «декомпиляция → правка JSON → компиляция» переписывает форму целиком, может терять непокрытые конструкции и даёт большой diff. `/form-edit` правит адресно.
 
 ## Параметры
 
@@ -31,7 +31,7 @@ allowed-tools:
 | `OutputPath` | Путь к выходному JSON. Если не задан — JSON в stdout |
 
 ```powershell
-powershell.exe -NoProfile -File ".cursor/skills/form-decompile/scripts/form-decompile.ps1" -FormPath "<Form.xml>" -OutputPath "<out.json>"
+powershell.exe -NoProfile -File "${CLAUDE_SKILL_DIR}/scripts/form-decompile.ps1" -FormPath "<Form.xml>" -OutputPath "<out.json>"
 ```
 
 ## Что получаешь
